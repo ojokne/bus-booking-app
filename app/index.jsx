@@ -2,6 +2,7 @@ import { View, StyleSheet, Text, Pressable } from "react-native";
 import { COLORS } from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 
 export default function Page() {
   return (
@@ -18,22 +19,22 @@ export default function Page() {
         }}
       >
         <Image
-            style={styles.image}
+          style={styles.image}
           source={require("../assets/images/bus.png")}
           //   placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
         />
-        <Text style={[styles.title, { fontFamily: "MontserratRegular" }]}>
-          We're
-        </Text>
+        <Text style={styles.title}>We're</Text>
         <Text style={styles.title}>going</Text>
         <Text style={styles.title}>on a trip</Text>
         <Text style={styles.subTitle}>Are you in?</Text>
 
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Get Started</Text>
-        </Pressable>
+        <Link href="/sign-in" asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Get Started</Text>
+          </Pressable>
+        </Link>
       </View>
     </LinearGradient>
   );
@@ -45,17 +46,18 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: "100%",
-    
   },
   title: {
-    fontSize: 50,
+    fontSize: 45,
     color: COLORS.secondary,
-    fontWeight: "bold",
+    fontFamily: "Poppins-Bold",
+    lineHeight: 60,
   },
   subTitle: {
     fontSize: 16,
     color: COLORS.secondary,
-    marginVertical: 30,
+    marginBottom: 30,
+    fontFamily: "Roboto-Regular",
   },
   button: {
     backgroundColor: COLORS.secondary,
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: COLORS.primary,
-    fontWeight: "bold",
+    fontFamily: "Poppins-Bold",
+    fontSize: 16,
   },
 });
