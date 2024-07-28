@@ -56,6 +56,12 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="(protected)"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
