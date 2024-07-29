@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Platform,
+} from "react-native";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -100,8 +107,8 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    paddingVertical: 10,
-    paddingHorizontal: 10,
+    padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
     paddingRight: 35,
     borderWidth: 1,
     borderColor: "#fff",
@@ -112,7 +119,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     top: "50%",
-    transform: [{ translateY: -10 }], // Center the icon vertically
+    transform: [{ translateY: -10 }], 
   },
   popularRoutes: {
     flex: 1,

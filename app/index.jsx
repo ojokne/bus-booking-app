@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import { View, StyleSheet, Text, Pressable, Platform } from "react-native";
 import { COLORS } from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
@@ -21,7 +21,6 @@ export default function Page() {
         <Image
           style={styles.image}
           source={require("../assets/images/bus.png")}
-          //   placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
         />
@@ -29,7 +28,6 @@ export default function Page() {
         <Text style={styles.title}>going</Text>
         <Text style={styles.title}>on a trip</Text>
         <Text style={styles.subTitle}>Are you in?</Text>
-        <Link href="/(protected)/ticket">ticket</Link>
 
         <Link href="/sign-in" asChild>
           <Pressable style={styles.button}>
@@ -63,7 +61,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.secondary,
     padding: 10,
-    paddingVertical: 15,
+    paddingVertical: Platform.OS === "ios" ? 15 : 10,
     borderRadius: 10,
     alignItems: "center",
   },
