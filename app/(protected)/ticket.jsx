@@ -337,15 +337,19 @@ l61 -3 3 -174z m280 -923 l-3 -553 -755 0 -755 0 -3 553 -2 552 760 0 760 0
               alignItems: "center",
             }}
           >
-            <Ionicons
-              name="bus"
-              size={36}
+            <View
               style={{
                 backgroundColor: "#f0f0f0",
                 borderRadius: 50,
                 padding: 10,
               }}
-            />
+            >
+              <Ionicons
+                name="bus"
+                size={36}
+                color="#000" // You can set the color of the icon if needed
+              />
+            </View>
 
             {/* name */}
             <View

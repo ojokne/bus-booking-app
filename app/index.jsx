@@ -29,6 +29,7 @@ export default function Page() {
         <Text style={styles.title}>going</Text>
         <Text style={styles.title}>on a trip</Text>
         <Text style={styles.subTitle}>Are you in?</Text>
+        <Link href="/(protected)/ticket">ticket</Link>
 
         <Link href="/sign-in" asChild>
           <Pressable style={styles.button}>

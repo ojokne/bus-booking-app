@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Keyboard,
+  Platform,
 } from "react-native";
 import { COLORS } from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
@@ -51,7 +52,7 @@ export default function Page() {
                 fontFamily: "Poppins-Bold",
               }}
             >
-              Recover Your Account{" "}
+              Recover Your Account
             </Text>
             <Text
               style={{
@@ -70,6 +71,7 @@ export default function Page() {
               keyboardType="email-address"
               autoCapitalize="none"
               cursorColor={COLORS.primary}
+              placeholderTextColor="#888"
             />
 
             <View style={{ width: "100%" }}>
@@ -117,6 +119,8 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 15 : 10,
+
     marginVertical: 10,
     borderWidth: 1,
     borderColor: "#ddd",
@@ -138,11 +142,12 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.primary,
     padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
     borderRadius: 10,
     marginTop: 20,
   },
   buttonText: {
-    color: COLORS.secondary,
+    color: "#fff",
     fontFamily: "Poppins-Bold",
     textAlign: "center",
     fontSize: 16,

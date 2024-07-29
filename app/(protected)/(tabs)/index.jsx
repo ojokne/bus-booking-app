@@ -33,6 +33,7 @@ export default function Page() {
             keyboardType="email-address"
             autoCapitalize="none"
             cursorColor={COLORS.primary}
+            placeholderTextColor="#888"
           />
           <Feather name="search" size={20} color="#888" style={styles.icon} />
         </View>
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    paddingVertical: 5,
+    paddingVertical: 10,
     paddingHorizontal: 10,
     paddingRight: 35,
     borderWidth: 1,

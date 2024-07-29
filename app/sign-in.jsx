@@ -6,11 +6,12 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Keyboard,
+  Platform,
 } from "react-native";
 import { COLORS } from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -71,6 +72,7 @@ export default function Page() {
               keyboardType="email-address"
               autoCapitalize="none"
               cursorColor={COLORS.primary}
+              placeholderTextColor="#888"
             />
             <TextInput
               placeholder="Password"
@@ -79,6 +81,7 @@ export default function Page() {
               style={styles.input}
               secureTextEntry
               cursorColor={COLORS.primary}
+              placeholderTextColor="#888"
             />
             <View style={styles.forgotPasswordContainer}>
               <Link href="/forgot-password">
@@ -87,8 +90,11 @@ export default function Page() {
             </View>
 
             <View style={{ width: "100%" }}>
-              <Pressable style={styles.button}>
-                <Text style={styles.buttonText}>Login</Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => router.push("/(tabs)")}
+              >
+                <Text style={styles.buttonText}>Sign in</Text>
               </Pressable>
             </View>
             <View style={styles.linkContainer}>
@@ -113,7 +119,6 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 7 / 9,
     flexGrow: 1,
-    // justifyContent: "flex-end",
   },
   bottomView: {
     backgroundColor: "#fff",
@@ -132,6 +137,7 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 15 : 10,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: "#ddd",
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordContainer: {
     alignSelf: "flex-end",
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   forgotPasswordText: {
     color: COLORS.primary,
@@ -162,10 +168,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.primary,
     padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
     borderRadius: 10,
   },
   buttonText: {
-    color: COLORS.secondary,
+    color: "#fff",
     fontFamily: "Poppins-Bold",
     textAlign: "center",
     fontSize: 16,
