@@ -78,220 +78,78 @@ export default function Page() {
             <View style={styles.topPicks}>
               <Image
                 style={styles.image}
-                source="https://thumbs.dreamstime.com/b/beautiful-nature-thailand-james-bond-island-reflection-reflects-water-near-phuket-61039131.jpg?w=768"
+                source="https://picsum.photos/id/110/367/267"
                 placeholder={{ blurhash }}
                 contentFit="cover"
                 transition={1000}
               />
               <View style={styles.textContainer}>
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontFamily: "Roboto-Medium",
-                    color: "#888",
-                  }}
-                >
-                  Lira, Uganda
-                </Text>
-                <Text
-                  style={{
-                    color: "#888",
-                    fontSize: 10,
-                    paddingVertical: 5,
-                    fontFamily: "Roboto-Light",
-                  }}
-                >
-                  From UGX
-                  <Text
-                    style={{
-                      color: "#555",
-                      fontSize: 18,
-                      fontFamily: "Poppins-Bold",
-                      paddingLeft: 5,
-                    }}
-                  >
-                    {" "}
-                    30,000
-                  </Text>
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 10,
-                    fontFamily: "Roboto-Light",
-                    color: "#888",
-                    marginBottom: 10,
-                    textDecorationLine: "underline",
-                  }}
-                >
-                  Find return trips
-                </Text>
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://thumbs.dreamstime.com/b/scenic-nature-landscape-path-near-lake-forest-path-tunnel-trees-near-lake-scenic-nature-autumn-landscape-panorama-view-115358410.jpg?w=1400"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontFamily: "Roboto-Medium",
-                    color: "#888",
-                  }}
-                >
-                  Kasese, Uganda
-                </Text>
-                <Text
-                  style={{
-                    color: "#888",
-                    fontSize: 10,
-                    paddingVertical: 5,
-                    fontFamily: "Roboto-Light",
-                  }}
-                >
-                  From UGX
-                  <Text
-                    style={{
-                      color: "#555",
-                      fontSize: 18,
-                      fontFamily: "Poppins-Bold",
-                      paddingLeft: 5,
-                    }}
-                  >
-                    {" "}
-                    50,000
-                  </Text>
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 10,
-                    fontFamily: "Roboto-Light",
-                    color: "#888",
-                    marginBottom: 10,
-                    textDecorationLine: "underline",
-                  }}
-                >
-                  Find return trips
-                </Text>
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
+                <Text style={styles.townName}>Lira, Uganda</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.fromText}>From UGX</Text>
+                  <Text style={styles.amount}>30,000</Text>
+                </View>
 
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://thumbs.dreamstime.com/b/autumn-fall-nature-scene-autumnal-park-beautiful-77869343.jpg?w=768"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontFamily: "Roboto-Medium",
-                    color: "#888",
-                  }}
-                >
-                  Arua, Uganda
-                </Text>
-                <Text
-                  style={{
-                    color: "#888",
-                    fontSize: 10,
-                    paddingVertical: 5,
-                    fontFamily: "Roboto-Light",
-                  }}
-                >
-                  From UGX
-                  <Text
-                    style={{
-                      color: "#555",
-                      fontSize: 18,
-                      fontFamily: "Poppins-Bold",
-                      paddingLeft: 5,
-                    }}
-                  >
-                    {" "}
-                    70,000
-                  </Text>
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 10,
-                    fontFamily: "Roboto-Light",
-                    color: "#888",
-                    marginBottom: 10,
-                    textDecorationLine: "underline",
-                  }}
-                >
-                  Find return trips
-                </Text>
                 <Pressable style={styles.button}>
                   <Text style={styles.buttonText}>Find a bus</Text>
                 </Pressable>
               </View>
             </View>
-
             <View style={styles.topPicks}>
               <Image
                 style={styles.image}
-                source="https://thumbs.dreamstime.com/b/cockatoo-parrot-sitting-green-tree-branch-australia-big-white-yellow-nature-background-sulphur-crested-cacatua-307519612.jpg?w=768"
+                source="https://picsum.photos/id/25/367/267"
                 placeholder={{ blurhash }}
                 contentFit="cover"
                 transition={1000}
               />
               <View style={styles.textContainer}>
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontFamily: "Roboto-Medium",
-                    color: "#888",
-                  }}
-                >
-                  Mbarara, Uganda
-                </Text>
-                <Text
-                  style={{
-                    color: "#888",
-                    fontSize: 10,
-                    paddingVertical: 5,
-                    fontFamily: "Roboto-Light",
-                  }}
-                >
-                  From UGX
-                  <Text
-                    style={{
-                      color: "#555",
-                      fontSize: 18,
-                      fontFamily: "Poppins-Bold",
-                      paddingLeft: 5,
-                    }}
-                  >
-                    {" "}
-                    25,000
-                  </Text>
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 10,
-                    fontFamily: "Roboto-Light",
-                    color: "#888",
-                    marginBottom: 10,
-                    textDecorationLine: "underline",
-                  }}
-                >
-                  Find return trips
-                </Text>
+                <Text style={styles.townName}>Lira, Uganda</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.fromText}>From UGX</Text>
+                  <Text style={styles.amount}>30,000</Text>
+                </View>
+
+                <Pressable style={styles.button}>
+                  <Text style={styles.buttonText}>Find a bus</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={styles.topPicks}>
+              <Image
+                style={styles.image}
+                source="https://picsum.photos/id/28/367/267"
+                placeholder={{ blurhash }}
+                contentFit="cover"
+                transition={1000}
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.townName}>Lira, Uganda</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.fromText}>From UGX</Text>
+                  <Text style={styles.amount}>30,000</Text>
+                </View>
+
+                <Pressable style={styles.button}>
+                  <Text style={styles.buttonText}>Find a bus</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={styles.topPicks}>
+              <Image
+                style={styles.image}
+                source="https://picsum.photos/id/29/367/267"
+                placeholder={{ blurhash }}
+                contentFit="cover"
+                transition={1000}
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.townName}>Lira, Uganda</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.fromText}>From UGX</Text>
+                  <Text style={styles.amount}>30,000</Text>
+                </View>
+
                 <Pressable style={styles.button}>
                   <Text style={styles.buttonText}>Find a bus</Text>
                 </Pressable>
@@ -338,7 +196,7 @@ const styles = StyleSheet.create({
   topPicks: {
     borderRadius: 10,
     width: 250,
-    height: 300,
+    height: 250,
     margin: 10,
     elevation: 2,
     backgroundColor: "#fff",
@@ -362,6 +220,23 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 5,
   },
+
+  townName: {
+    fontFamily: "Roboto-Light",
+    color: "#888",
+    marginTop: 10,
+  },
+  fromText: {
+    color: "#888",
+    fontSize: 10,
+    paddingVertical: 5,
+    fontFamily: "Roboto-Light",
+  },
+  amount: {
+    color: "#555",
+    fontFamily: "Poppins-Regular",
+    paddingHorizontal: 5,
+  },
   button: {
     padding: 10,
     paddingVertical: Platform.OS === "ios" ? 15 : 10,
@@ -370,6 +245,7 @@ const styles = StyleSheet.create({
     width: "100%",
     borderColor: "#555",
     borderWidth: StyleSheet.hairlineWidth,
+    marginVertical: 10,
   },
   buttonText: {
     color: "#555",
