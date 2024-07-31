@@ -13,15 +13,18 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants/colors";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
+
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 export default function Page() {
   const insets = useSafeAreaInsets();
   const [destination, setDesination] = useState("");
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style={{ backgroundColor: "#fff" }}>
       <View
         style={[
           styles.headerContainer,
@@ -47,7 +50,380 @@ export default function Page() {
           <Feather name="search" size={20} color="#888" style={styles.icon} />
         </View>
       </View>
-      
+      {/* <View style={{ padding: 20 }}>
+        <View
+          style={{
+            borderColor: "#eee",
+            borderWidth: StyleSheet.hairlineWidth,
+            padding: 10,
+            borderRadius: 10,
+            elevation: 2,
+            backgroundColor: "#fff",
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+          }}
+        >
+          <View style={{ alignItems: "center" }}>
+            <View
+              style={{
+                backgroundColor: "#f0f0f0",
+                borderRadius: 50,
+                padding: 10,
+              }}
+            >
+              <Ionicons
+                name="bus"
+                size={36}
+                color="#000" // You can set the color of the icon if needed
+              />
+            </View>
+            <Text
+              style={{
+                // fontSize: 18,
+                fontFamily: "Poppins-Regular",
+              }}
+            >
+              YY Coaches
+            </Text>
+            <Text
+              style={{
+                // fontSize: 18,
+                fontFamily: "Roboto-Regular",
+                color: "#888",
+              }}
+            >
+              UAM-123-X
+            </Text>
+          </View>
+        </View>
+      </View> */}
+
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        style={{ backgroundColor: "#fff" }}
+      >
+        <View style={{ paddingVertical: 10 }}>
+          <Text
+            style={{
+              fontSize: 18,
+              fontFamily: "Poppins-Bold",
+              paddingHorizontal: 20,
+              color: "#555",
+            }}
+          >
+            Top destinations from kampala
+          </Text>
+
+          {/* northern */}
+          <View>
+            <Text
+              style={{
+                fontFamily: "Poppins-Bold",
+                paddingHorizontal: 20,
+                color: "#555",
+              }}
+            >
+              Northern Uganda
+            </Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                paddingHorizontal: 10,
+              }}
+            >
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/110/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Lira, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/25/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Gulu, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/28/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Arua, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/29/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Kitgum, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </ScrollView>
+          </View>
+
+          {/* western */}
+          <View>
+            <Text
+              style={{
+                fontFamily: "Poppins-Bold",
+                paddingHorizontal: 20,
+                color: "#555",
+              }}
+            >
+              Western Uganda
+            </Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                paddingHorizontal: 10,
+              }}
+            >
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/110/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Mbarara, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/25/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Kasese, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/28/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Kabale, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/29/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Isingiro, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </ScrollView>
+          </View>
+
+          {/* eastern */}
+          <View>
+            <Text
+              style={{
+                fontFamily: "Poppins-Bold",
+                paddingHorizontal: 20,
+                color: "#555",
+              }}
+            >
+              Eastern Uganda
+            </Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                paddingHorizontal: 10,
+              }}
+            >
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/110/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Mbale, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/25/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Tororo, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/28/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>kapchorwa, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.topPicks}>
+                <Image
+                  style={styles.image}
+                  source="https://picsum.photos/id/29/367/267"
+                  placeholder={{ blurhash }}
+                  contentFit="cover"
+                  transition={1000}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.townName}>Soroti, Uganda</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.fromText}>From UGX</Text>
+                    <Text style={styles.amount}>30,000</Text>
+                  </View>
+
+                  <Pressable style={styles.button}>
+                    <Text style={styles.buttonText}>Find a bus</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </ScrollView>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaProvider>
   );
 }
@@ -85,7 +461,7 @@ const styles = StyleSheet.create({
   },
   topPicks: {
     borderRadius: 10,
-    width: 250,
+    // width: 250,
     height: 250,
     margin: 10,
     elevation: 2,
@@ -124,7 +500,7 @@ const styles = StyleSheet.create({
   },
   amount: {
     color: "#555",
-    fontFamily: "Poppins-Regular",
+    fontFamily: "Poppins-Bold",
     paddingHorizontal: 5,
   },
   button: {

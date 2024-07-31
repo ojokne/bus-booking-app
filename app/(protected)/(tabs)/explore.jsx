@@ -1,5 +1,12 @@
 import { Link } from "expo-router";
-import { View, Text, ScrollView, StyleSheet, Platform,Pressable } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Platform,
+  Pressable,
+} from "react-native";
 import { COLORS } from "../../../constants/colors";
 import { Image } from "expo-image";
 
@@ -124,6 +131,17 @@ export default function Page() {
           </ScrollView>
         </View>
       </ScrollView>
+
+      <Link href="/(protected)/ticket" asChild>
+        <Text
+          style={{
+            padding: 20,
+            color:"blue"
+          }}
+        >
+          Check ticket
+        </Text>
+      </Link>
     </View>
   );
 }
