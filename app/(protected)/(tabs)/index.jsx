@@ -16,8 +16,6 @@ import { COLORS } from "../../../constants/colors";
 import { Feather } from "@expo/vector-icons";
 import { Image } from "expo-image";
 
-const blurhash =
-  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 export default function Page() {
   const insets = useSafeAreaInsets();
   const [destination, setDesination] = useState("");
@@ -49,115 +47,7 @@ export default function Page() {
           <Feather name="search" size={20} color="#888" style={styles.icon} />
         </View>
       </View>
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "#fff" }}
-      >
-        <View style={{ paddingVertical: 10 }}>
-          <Text
-            style={{
-              fontSize: 18,
-              fontFamily: "Poppins-Bold",
-              paddingHorizontal: 20,
-              color: "#555",
-            }}
-          >
-            Top destinations from kampala
-          </Text>
-
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexDirection: "row",
-            }}
-          >
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://picsum.photos/id/110/367/267"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text style={styles.townName}>Lira, Uganda</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.fromText}>From UGX</Text>
-                  <Text style={styles.amount}>30,000</Text>
-                </View>
-
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://picsum.photos/id/25/367/267"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text style={styles.townName}>Lira, Uganda</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.fromText}>From UGX</Text>
-                  <Text style={styles.amount}>30,000</Text>
-                </View>
-
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://picsum.photos/id/28/367/267"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text style={styles.townName}>Lira, Uganda</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.fromText}>From UGX</Text>
-                  <Text style={styles.amount}>30,000</Text>
-                </View>
-
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
-            <View style={styles.topPicks}>
-              <Image
-                style={styles.image}
-                source="https://picsum.photos/id/29/367/267"
-                placeholder={{ blurhash }}
-                contentFit="cover"
-                transition={1000}
-              />
-              <View style={styles.textContainer}>
-                <Text style={styles.townName}>Lira, Uganda</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.fromText}>From UGX</Text>
-                  <Text style={styles.amount}>30,000</Text>
-                </View>
-
-                <Pressable style={styles.button}>
-                  <Text style={styles.buttonText}>Find a bus</Text>
-                </Pressable>
-              </View>
-            </View>
-          </ScrollView>
-        </View>
-      </ScrollView>
+      
     </SafeAreaProvider>
   );
 }

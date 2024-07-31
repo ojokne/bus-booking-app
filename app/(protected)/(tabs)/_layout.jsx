@@ -1,5 +1,6 @@
 import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { COLORS } from "../../../constants/colors";
 
 export default function Layout() {
   return (
@@ -17,11 +18,17 @@ export default function Layout() {
       <Tabs.Screen
         name="explore"
         options={{
-          headerShown: false,
+           title: "Explore",
+          headerStyle: {
+            backgroundColor: COLORS.accent,
+          },
           tabBarIcon: ({ color }) => (
             <Ionicons name="compass-outline" size={24} color={color} />
           ),
           tabBarShowLabel: false,
+          headerShadowVisible: false,
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
         }}
       />
       <Tabs.Screen
