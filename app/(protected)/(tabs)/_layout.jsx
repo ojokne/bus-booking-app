@@ -13,12 +13,13 @@ export default function Layout() {
             <Feather name="home" size={24} color={color} />
           ),
           tabBarShowLabel: false,
+          tabBarHideOnKeyboard: true,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-           title: "Explore",
+          title: "Explore",
           headerStyle: {
             backgroundColor: COLORS.accent,
           },
