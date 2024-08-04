@@ -7,24 +7,34 @@ import {
   View,
   Platform,
   Pressable,
+  ImageBackground,
 } from "react-native";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants/colors";
-import { Feather, Ionicons } from "@expo/vector-icons";
-import { Image } from "expo-image";
-
-const blurhash =
-  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
+import { Feather,  } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Page() {
   const insets = useSafeAreaInsets();
   const [destination, setDesination] = useState("");
+  const router = useRouter();
+
+  const handleFindBus = () => {
+    router.push({
+      pathname: "/(protected)/bus-list",
+      params: {
+        origin: "Kampala",
+        destination: "Lira",
+      },
+    });
+  };
 
   return (
-    <SafeAreaProvider style={{ backgroundColor: "#fff" }}>
+    <SafeAreaProvider>
       <View
         style={[
           styles.headerContainer,
@@ -50,379 +60,239 @@ export default function Page() {
           <Feather name="search" size={20} color="#888" style={styles.icon} />
         </View>
       </View>
-      {/* <View style={{ padding: 20 }}>
-        <View
-          style={{
-            borderColor: "#eee",
-            borderWidth: StyleSheet.hairlineWidth,
-            padding: 10,
-            borderRadius: 10,
-            elevation: 2,
-            backgroundColor: "#fff",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-          }}
-        >
-          <View style={{ alignItems: "center" }}>
-            <View
-              style={{
-                backgroundColor: "#f0f0f0",
-                borderRadius: 50,
-                padding: 10,
-              }}
-            >
-              <Ionicons
-                name="bus"
-                size={36}
-                color="#000" // You can set the color of the icon if needed
-              />
-            </View>
-            <Text
-              style={{
-                // fontSize: 18,
-                fontFamily: "Poppins-Regular",
-              }}
-            >
-              YY Coaches
-            </Text>
-            <Text
-              style={{
-                // fontSize: 18,
-                fontFamily: "Roboto-Regular",
-                color: "#888",
-              }}
-            >
-              UAM-123-X
-            </Text>
-          </View>
-        </View>
-      </View> */}
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "#fff" }}
+        style={{ backgroundColor: "#f5f5f5" }}
       >
-        <View style={{ paddingVertical: 10 }}>
+        {/* upcoming trips header  */}
+        <View
+          style={{
+            paddingVertical: 20,
+            justifyContent: "space-between",
+            flexDirection: "row",
+          }}
+        >
           <Text
             style={{
               fontSize: 18,
-              fontFamily: "Poppins-Bold",
+              fontFamily: "Poppins-Medium",
               paddingHorizontal: 20,
               color: "#555",
             }}
           >
-            Top destinations from kampala
+            Upcoming Trips
           </Text>
 
-          {/* northern */}
-          <View>
-            <Text
+          <Pressable
+            style={{
+              justifyContent: "space-between",
+              flexDirection: "row",
+            }}
+          >
+            <Feather
+              name="chevron-down"
+              color={COLORS.primary}
+              size={24}
               style={{
-                fontFamily: "Poppins-Bold",
-                paddingHorizontal: 20,
-                color: "#555",
+                paddingRight: 20,
               }}
-            >
-              Northern Uganda
-            </Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                paddingHorizontal: 10,
-              }}
-            >
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/110/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Lira, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
+            />
+          </Pressable>
+        </View>
 
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/25/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Gulu, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/28/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Arua, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/29/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Kitgum, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </ScrollView>
+        {/* upcoming trips card */}
+        <View style={styles.upComingTrips}>
+          <View>
+            <Text style={styles.upComingTripsSubTitle}>24th Nov, 9:45 am</Text>
+            <Text style={styles.upComingTripsTitle}>Kampala</Text>
+            <Text style={styles.upComingTripsText}>YY Bus Terminal</Text>
           </View>
-
-          {/* western */}
           <View>
             <Text
-              style={{
-                fontFamily: "Poppins-Bold",
-                paddingHorizontal: 20,
-                color: "#555",
-              }}
+              style={[
+                styles.upComingTripsSubTitle,
+                {
+                  textAlign: "right",
+                },
+              ]}
             >
-              Western Uganda
+              4:30 pm
             </Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                paddingHorizontal: 10,
-              }}
-            >
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/110/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Mbarara, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/25/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Kasese, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/28/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Kabale, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/29/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Isingiro, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </ScrollView>
-          </View>
-
-          {/* eastern */}
-          <View>
             <Text
-              style={{
-                fontFamily: "Poppins-Bold",
-                paddingHorizontal: 20,
-                color: "#555",
-              }}
+              style={[
+                styles.upComingTripsTitle,
+                {
+                  textAlign: "right",
+                },
+              ]}
             >
-              Eastern Uganda
+              Lira
             </Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                paddingHorizontal: 10,
-              }}
+            <Text
+              style={[
+                styles.upComingTripsText,
+                {
+                  textAlign: "right",
+                },
+              ]}
             >
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/110/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Mbale, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/25/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Tororo, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/28/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>kapchorwa, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-              <View style={styles.topPicks}>
-                <Image
-                  style={styles.image}
-                  source="https://picsum.photos/id/29/367/267"
-                  placeholder={{ blurhash }}
-                  contentFit="cover"
-                  transition={1000}
-                />
-                <View style={styles.textContainer}>
-                  <Text style={styles.townName}>Soroti, Uganda</Text>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.fromText}>From UGX</Text>
-                    <Text style={styles.amount}>30,000</Text>
-                  </View>
-
-                  <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Find a bus</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </ScrollView>
+              YY Bus Terminal
+            </Text>
           </View>
         </View>
+
+        {/* popular destinations header */}
+        <View
+          style={{
+            paddingVertical: 20,
+            justifyContent: "space-between",
+            flexDirection: "row",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 18,
+              fontFamily: "Poppins-Medium",
+              paddingHorizontal: 20,
+              color: "#555",
+            }}
+          >
+            Popular Destinations
+          </Text>
+
+          <Pressable
+            style={{
+              justifyContent: "space-between",
+              flexDirection: "row",
+            }}
+          >
+            <Feather
+              name="chevron-down"
+              color={COLORS.primary}
+              size={24}
+              style={{
+                paddingRight: 20,
+              }}
+            />
+          </Pressable>
+        </View>
+
+        {/* popular destinations scroll bar */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row",
+          }}
+        >
+          <Pressable
+            style={{ flex: 1, paddingHorizontal: 20 }}
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <ImageBackground
+              source={{ uri: "https://picsum.photos/id/110/367/267" }}
+              style={styles.popularDestinationsImageBackground}
+              imageStyle={styles.popularDestinationsImage}
+              resizeMode="cover"
+            >
+              <LinearGradient
+                colors={["transparent", "rgba(0, 0, 0, 0.5)"]} // Gradient from transparent to semi-transparent black
+                style={styles.popularDestinationsTextContainer}
+              >
+                <Text style={styles.popularDestinationsText}>Lira</Text>
+              </LinearGradient>
+            </ImageBackground>
+          </Pressable>
+
+          <Pressable
+            style={{ flex: 1 }}
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <ImageBackground
+              source={{ uri: "https://picsum.photos/id/25/367/267" }}
+              style={styles.popularDestinationsImageBackground}
+              imageStyle={styles.popularDestinationsImage}
+              resizeMode="cover"
+            >
+              <LinearGradient
+                colors={["transparent", "rgba(0, 0, 0, 0.8)"]} // Gradient from transparent to semi-transparent black
+                style={styles.popularDestinationsTextContainer}
+              >
+                <Text style={styles.popularDestinationsText}>Mbarara</Text>
+              </LinearGradient>
+            </ImageBackground>
+          </Pressable>
+          <Pressable
+            style={{ flex: 1, paddingHorizontal: 20 }}
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <ImageBackground
+              source={{ uri: "https://picsum.photos/id/28/367/267" }}
+              style={styles.popularDestinationsImageBackground}
+              imageStyle={styles.popularDestinationsImage}
+              resizeMode="cover"
+            >
+              <LinearGradient
+                colors={["transparent", "rgba(0, 0, 0, 0.5)"]} // Gradient from transparent to semi-transparent black
+                style={styles.popularDestinationsTextContainer}
+              >
+                <Text style={styles.popularDestinationsText}>Soroti</Text>
+              </LinearGradient>
+            </ImageBackground>
+          </Pressable>
+
+          <Pressable
+            style={{ flex: 1 }}
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <ImageBackground
+              source={{ uri: "https://picsum.photos/id/29/367/267" }}
+              style={styles.popularDestinationsImageBackground}
+              imageStyle={styles.popularDestinationsImage}
+              resizeMode="cover"
+            >
+              <LinearGradient
+                colors={["transparent", "rgba(0, 0, 0, 0.8)"]} // Gradient from transparent to semi-transparent black
+                style={styles.popularDestinationsTextContainer}
+              >
+                <Text style={styles.popularDestinationsText}>Kabale</Text>
+              </LinearGradient>
+            </ImageBackground>
+          </Pressable>
+
+          <Pressable
+            style={{ flex: 1, paddingHorizontal: 20 }}
+            onPress={() => {
+              console.log("pressed");
+            }}
+          >
+            <ImageBackground
+              source={{ uri: "https://picsum.photos/id/62/367/267" }}
+              style={styles.popularDestinationsImageBackground}
+              imageStyle={styles.popularDestinationsImage}
+              resizeMode="cover"
+            >
+              <LinearGradient
+                colors={["transparent", "rgba(0, 0, 0, 0.5)"]} // Gradient from transparent to semi-transparent black
+                style={styles.popularDestinationsTextContainer}
+              >
+                <Text style={styles.popularDestinationsText}>Arua</Text>
+              </LinearGradient>
+            </ImageBackground>
+          </Pressable>
+        </ScrollView>
       </ScrollView>
     </SafeAreaProvider>
   );
@@ -458,6 +328,57 @@ const styles = StyleSheet.create({
     right: 10,
     top: "50%",
     transform: [{ translateY: -10 }],
+  },
+  upComingTrips: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#fff",
+    elevation: 3,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+
+  },
+  upComingTripsTitle: {
+    fontFamily: "Roboto-Medium",
+    color: "#555",
+    marginVertical: 10,
+    fontSize: 18,
+  },
+  upComingTripsSubTitle: {
+    fontFamily: "Roboto-Regular",
+    color: "#888",
+  },
+  upComingTripsText: {
+    fontFamily: "Roboto-Regular",
+    color: "#A6A6A6",
+  },
+
+  popularDestinationsImageBackground: {
+    flex: 1,
+    height: 200,
+    justifyContent: "flex-end",
+    width: 140,
+  },
+  popularDestinationsImage: {
+    borderRadius: 10,
+  },
+  popularDestinationsTextContainer: {
+    padding: 10,
+    borderBottomLeftRadius: 20, // Match border radius of image
+    borderBottomRightRadius: 20, // Match border radius of image
+  },
+  popularDestinationsText: {
+    color: "#fff",
+    fontSize: 16,
+    paddingHorizontal: 10,
   },
   topPicks: {
     borderRadius: 10,

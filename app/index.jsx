@@ -26,7 +26,7 @@ export default function Page() {
         />
         <Text style={styles.title}>We're</Text>
         <Text style={styles.title}>going</Text>
-        <Text style={styles.title}>on a trip</Text>
+        <Text style={styles.title}>on a date </Text>
         <Text style={styles.subTitle}>Are you in?</Text>
 
         <Link href="/sign-in" asChild>
