@@ -14,7 +14,7 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants/colors";
-import { Feather,  } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -344,7 +344,6 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowOpacity: 0.25,
-
   },
   upComingTripsTitle: {
     fontFamily: "Roboto-Medium",
@@ -372,8 +371,8 @@ const styles = StyleSheet.create({
   },
   popularDestinationsTextContainer: {
     padding: 10,
-    borderBottomLeftRadius: 20, // Match border radius of image
-    borderBottomRightRadius: 20, // Match border radius of image
+    borderBottomLeftRadius: 10, // Match border radius of image
+    borderBottomRightRadius: 10, // Match border radius of image
   },
   popularDestinationsText: {
     color: "#fff",
