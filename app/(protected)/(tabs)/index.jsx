@@ -14,7 +14,7 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants/colors";
-import { Feather } from "@expo/vector-icons";
+import { Entypo, Feather, Fontisto, Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -35,7 +35,7 @@ export default function Page() {
 
   return (
     <SafeAreaProvider>
-      <View
+      {/* <View
         style={[
           styles.headerContainer,
           {
@@ -59,12 +59,95 @@ export default function Page() {
           />
           <Feather name="search" size={20} color="#888" style={styles.icon} />
         </View>
-      </View>
+      </View> */}
+
+      <ImageBackground
+        source={{
+          uri: "https://roadfund.ug/wp-content/uploads/2019/12/The-Nile-Bridge-Jinja-4-optimized-1.jpg",
+        }}
+        style={[
+          {
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            zIndex: 1,
+          },
+        ]}
+        imageStyle={{
+          width: "100%",
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
+        }}
+        resizeMode="cover"
+      >
+        <LinearGradient
+          colors={["rgba(0, 0, 0, 0.3)", "rgba(0, 0, 0, 0.3)"]} // Gradient from transparent to semi-transparent black
+          style={{
+            paddingHorizontal: 20,
+            paddingTop: insets.top + 20,
+            paddingBottom: insets.bottom + 30,
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 30,
+            }}
+          >
+            <Ionicons name="menu-outline" size={24} color={"#fff"} />
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Fontisto name="map-marker-alt" size={12} color={"#fff"} />
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: "#fff",
+                  fontFamily: "Poppins-Bold",
+                  paddingHorizontal: 5,
+                }}
+              >
+                Kampala
+              </Text>
+              <Entypo name="chevron-small-down" size={24} color={"#fff"} />
+            </View>
+            <Ionicons name="notifications-sharp" size={24} color={"#fff"} />
+          </View>
+          <View>
+            <Text style={styles.title}>Hi there!, where are you going?</Text>
+            <View style={styles.inputContainer}>
+              <TextInput
+                placeholder="Enter your destination"
+                value={destination}
+                onChangeText={setDesination}
+                style={styles.input}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                cursorColor={COLORS.primary}
+                placeholderTextColor="#888"
+              />
+              <Fontisto
+                name="map-marker-alt"
+                size={14}
+                color="#888"
+                style={styles.icon}
+              />
+            </View>
+          </View>
+        </LinearGradient>
+      </ImageBackground>
 
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "#f5f5f5" }}
+        style={{ backgroundColor: "#f5f5f5", marginTop: 20 }}
       >
         {/* upcoming trips header  */}
         <View
@@ -190,7 +273,10 @@ export default function Page() {
           }}
         >
           <Pressable
-            style={{ flex: 1, paddingHorizontal: 20 }}
+            style={{
+              flex: 1,
+              paddingHorizontal: 20,
+            }}
             onPress={() => {
               console.log("pressed");
             }}
@@ -273,7 +359,10 @@ export default function Page() {
           </Pressable>
 
           <Pressable
-            style={{ flex: 1, paddingHorizontal: 20 }}
+            style={{
+              flex: 1,
+              paddingHorizontal: 20,
+            }}
             onPress={() => {
               console.log("pressed");
             }}
@@ -308,26 +397,39 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#fff",
     fontFamily: "Poppins-Bold",
+    paddingVertical: 10,
   },
   inputContainer: {
     position: "relative",
     marginVertical: 10,
+    position: "absolute",
+    top: 50,
+    zIndex: 500,
+    width: "100%",
+    // paddingVertical: 10,
   },
   input: {
     width: "100%",
     padding: 10,
     paddingVertical: Platform.OS === "ios" ? 12 : 8,
-    paddingRight: 35,
+    paddingLeft: 30,
     borderWidth: 1,
     borderColor: "#fff",
     borderRadius: 10,
     backgroundColor: "#fff",
+    elevation: 3,
+    shadowColor: "#888",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
   },
   icon: {
     position: "absolute",
-    right: 10,
+    left: 10,
     top: "50%",
-    transform: [{ translateY: -10 }],
+    transform: [{ translateY: -7 }],
   },
   upComingTrips: {
     flexDirection: "row",
@@ -335,10 +437,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "#fff",
-    elevation: 3,
     marginHorizontal: 20,
     borderRadius: 10,
-    shadowColor: "#000",
+    elevation: 3,
+    shadowColor: "#888",
     shadowOffset: {
       width: 0,
       height: 2,
