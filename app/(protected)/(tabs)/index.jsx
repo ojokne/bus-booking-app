@@ -278,7 +278,7 @@ export default function Page() {
               paddingHorizontal: 20,
             }}
             onPress={() => {
-              console.log("pressed");
+              handleFindBus();
             }}
           >
             <ImageBackground
@@ -299,7 +299,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1 }}
             onPress={() => {
-              console.log("pressed");
+              handleFindBus();
             }}
           >
             <ImageBackground
@@ -319,7 +319,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1, paddingHorizontal: 20 }}
             onPress={() => {
-              console.log("pressed");
+              handleFindBus();
             }}
           >
             <ImageBackground
@@ -340,7 +340,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1 }}
             onPress={() => {
-              console.log("pressed");
+              handleFindBus();
             }}
           >
             <ImageBackground
@@ -364,7 +364,7 @@ export default function Page() {
               paddingHorizontal: 20,
             }}
             onPress={() => {
-              console.log("pressed");
+              handleFindBus();
             }}
           >
             <ImageBackground
