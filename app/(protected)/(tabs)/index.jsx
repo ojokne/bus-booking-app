@@ -80,7 +80,7 @@ export default function Page() {
         resizeMode="cover"
       >
         <LinearGradient
-          colors={["rgba(0, 0, 0, 0.3)", "rgba(0, 0, 0, 0.3)"]} // Gradient from transparent to semi-transparent black
+          colors={["rgba(0, 0, 0, 0.6)", "rgba(0, 0, 0, 0.6)"]} // Gradient from transparent to semi-transparent black
           style={{
             paddingHorizontal: 20,
             paddingTop: insets.top + 20,
