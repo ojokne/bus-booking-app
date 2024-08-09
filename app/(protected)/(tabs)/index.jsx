@@ -401,7 +401,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   inputContainer: {
-    position: "relative",
     marginVertical: 10,
     position: "absolute",
     top: 50,

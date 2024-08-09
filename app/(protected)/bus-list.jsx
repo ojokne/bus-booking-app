@@ -41,85 +41,282 @@
 
 //   return (
 //     <SafeAreaProvider>
-//       <View
-//         style={[
-//           styles.headerContainer,
-//           {
-//             paddingTop: insets.top + 30,
-//             paddingBottom: insets.bottom + 30,
-//             paddingHorizontal: 20,
-//           },
-//         ]}
+//       <ImageBackground
+//         source={require("../../assets/images/lira-1.jpeg")}
+//         style={styles.headerContainer}
+//         imageStyle={styles.headerContainerImage}
+//         resizeMode="cover"
 //       >
-//         <Pressable
-//           onPress={() => {
-//             router.back();
-//           }}
-//         >
-//           <Feather name="arrow-left" size={24} color="#fff" />
-//         </Pressable>
-//         <View
+//         <LinearGradient
+//           colors={["rgba(0, 0, 0, 0.6)", "rgba(0, 0, 0, 0.6)"]} // Gradient from transparent to semi-transparent black
 //           style={{
-//             flexDirection: "row",
-//             justifyContent: "space-between",
+//             paddingHorizontal: 20,
+//             paddingTop: insets.top + 20,
+//             paddingBottom: insets.bottom + 30,
+//             borderBottomLeftRadius: 20,
+//             borderBottomRightRadius: 20,
 //           }}
 //         >
-//           <Text style={styles.title}>Kampala</Text>
+//           <Pressable
+//             onPress={() => {
+//               router.back();
+//             }}
+//           >
+//             <Feather name="arrow-left" size={24} color="#fff" />
+//           </Pressable>
 //           <View
 //             style={{
 //               flexDirection: "row",
 //               justifyContent: "space-between",
-//               alignItems: "center",
+//               marginTop: 20,
 //             }}
 //           >
+//             <Text style={styles.title}>Kampala</Text>
 //             <View
 //               style={{
-//                 flexDirection: "column",
+//                 flexDirection: "row",
 //                 justifyContent: "space-between",
 //                 alignItems: "center",
+//                 marginBottom: 30,
 //               }}
 //             >
-//               <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
 //               <View
 //                 style={{
-//                   flexDirection: "row",
+//                   flexDirection: "column",
 //                   justifyContent: "space-between",
 //                   alignItems: "center",
 //                 }}
 //               >
-//                 <Text
+//                 <MaterialCommunityIcons
+//                   name="bus-side"
+//                   size={36}
+//                   color="#fff"
+//                 />
+//                 <View
 //                   style={{
-//                     fontSize: 12,
-//                     color: "#fff",
-//                     fontFamily: "Roboto-Regular",
-//                     paddingHorizontal: 5,
+//                     flexDirection: "row",
+//                     justifyContent: "space-between",
+//                     alignItems: "center",
 //                   }}
 //                 >
-//                   Monday, 01 Nov 2024
-//                 </Text>
-//                 <Entypo name="chevron-small-down" size={24} color={"#fff"} />
+//                   <Text
+//                     style={{
+//                       fontSize: 12,
+//                       color: "#fff",
+//                       fontFamily: "Roboto-Regular",
+//                       paddingHorizontal: 5,
+//                     }}
+//                   >
+//                     Monday, 01 Nov 2024
+//                   </Text>
+//                   <Entypo name="chevron-small-down" size={24} color={"#fff"} />
+//                 </View>
 //               </View>
 //             </View>
+//             <Text style={styles.title}>Lira</Text>
 //           </View>
-//           <Text style={styles.title}>Lira</Text>
-//         </View>
-//       </View>
+//         </LinearGradient>
+//       </ImageBackground>
 
 //       <ScrollView
+//         // horizontal
 //         showsHorizontalScrollIndicator={false}
 //         showsVerticalScrollIndicator={false}
-//         style={{ backgroundColor: "#f5f5f5", marginTop: 20 }}
+//         style={styles.scrollViewContainer}
+//         contentContainerStyle={{
+//           justifyContent: "center",
+//           alignItems: "center",
+//         }}
 //       >
-//         {/* popular destinations scroll bar */}
-//         <ScrollView
-//           horizontal
-//           showsHorizontalScrollIndicator={false}
-//           contentContainerStyle={{
-//             justifyContent: "space-between",
-//             alignItems: "center",
-//             flexDirection: "row",
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
 //           }}
-//         ></ScrollView>
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
+//         <View
+//           style={{
+//             width: "90%",
+//             paddingHorizontal: 20,
+//             backgroundColor: "#fff",
+//             borderRadius: 10,
+//             elevation: 3,
+//             shadowColor: "#888",
+//             shadowOffset: {
+//               width: 0,
+//               height: 2,
+//             },
+//             shadowOpacity: 0.25,
+//             marginBottom: 10,
+//           }}
+//         >
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//           <Text>Lorem ipsum dolor sit amet.</Text>
+//         </View>
 //       </ScrollView>
 //     </SafeAreaProvider>
 //   );
@@ -127,7 +324,12 @@
 
 // const styles = StyleSheet.create({
 //   headerContainer: {
-//     backgroundColor: COLORS.accent,
+//     borderBottomLeftRadius: 10,
+//     borderBottomRightRadius: 10,
+//     // height: 200,
+//     zIndex: 1,
+//   },
+//   headerContainerImage: {
 //     borderBottomLeftRadius: 20,
 //     borderBottomRightRadius: 20,
 //   },
@@ -136,6 +338,15 @@
 //     color: "#fff",
 //     fontFamily: "Poppins-Bold",
 //     paddingVertical: 10,
+//   },
+//   scrollViewContainer: {
+//     marginTop: 10,
+//     position: "absolute",
+//     top: 150,
+//     zIndex: 2,
+//     width: "100%",
+//     height: "100%",
+//     // backgroundColor: "#f5f5f5",
 //   },
 
 //   button: {
@@ -200,19 +411,8 @@ export default function Page() {
     <SafeAreaProvider>
       <ImageBackground
         source={require("../../assets/images/lira-1.jpeg")}
-        style={[
-          {
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            height: 200,
-            zIndex: 1,
-          },
-        ]}
-        imageStyle={{
-          width: "100%",
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-        }}
+        style={styles.headerContainer}
+        imageStyle={styles.headerContainerImage}
         resizeMode="cover"
       >
         <LinearGradient
@@ -223,7 +423,6 @@ export default function Page() {
             paddingBottom: insets.bottom + 30,
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
-            height: "100%",
           }}
         >
           <Pressable
@@ -237,95 +436,119 @@ export default function Page() {
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              marginTop: 20,
+              alignItems: "center",
             }}
           >
             <Text style={styles.title}>Kampala</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 30,
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <MaterialCommunityIcons
-                  name="bus-side"
-                  size={36}
-                  color="#fff"
-                />
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: 12,
-                      color: "#fff",
-                      fontFamily: "Roboto-Regular",
-                      paddingHorizontal: 5,
-                    }}
-                  >
-                    Monday, 01 Nov 2024
-                  </Text>
-                  <Entypo name="chevron-small-down" size={24} color={"#fff"} />
-                </View>
-              </View>
-            </View>
+            <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
+
             <Text style={styles.title}>Lira</Text>
           </View>
         </LinearGradient>
       </ImageBackground>
 
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "#f5f5f5", marginTop: 20 }}
+      <View
+        style={{
+          position: "absolute",
+          top: 130,
+          zIndex: 2,
+          backgroundColor: "#fff",
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          height: "100%",
+        }}
       >
-        {/* popular destinations scroll bar */}
-        <ScrollView
+        {/* <ScrollView
+          // horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            justifyContent: "space-between",
-            alignItems: "center",
+          showsVerticalScrollIndicator={false}
+          style={styles.scrollViewContainer}
+          // contentContainerStyle={{
+          //   justifyContent: "center",
+          //   alignItems: "center",
+          // }}
+        >
+          <View
+            style={{
+              width: "90%",
+              backgroundColor: "#fff",
+              borderRadius: 10,
+              elevation: 3,
+              shadowColor: "#888",
+              shadowOffset: {
+                width: 0,
+                height: 2,
+              },
+              shadowOpacity: 0.25,
+            }}
+          >
+            <Text>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              beatae consequatur consequuntur corporis non vero, ab optio iusto
+              suscipit tenetur numquam, voluptas ducimus maxime, consectetur
+              ipsum dignissimos accusamus quibusdam obcaecati. Deserunt facilis
+              obcaecati id recusandae quo sint, fugit, laudantium unde dolores
+              magnam possimus, at voluptas praesentium libero delectus hic quam
+              dolor necessitatibus quidem eligendi quod nostrum. Saepe laborum
+              commodi fugiat labore voluptate? Eum, eius aut maxime beatae
+              laboriosam nisi maiores magnam aspernatur amet placeat sint
+              praesentium minus necessitatibus at explicabo rem deserunt! A nam,
+              sunt enim natus modi sit consequatur praesentium, deserunt autem
+              repudiandae at neque commodi necessitatibus quos sed.
+            </Text>
+          </View>
+        </ScrollView> */}
+
+        <Pressable
+          style={{
             flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 20,
           }}
         >
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            perferendis, nam unde laboriosam ea velit fuga consectetur explicabo
-            ullam excepturi. Tempora magni eum iste eos voluptatum soluta
-            provident nulla velit consectetur placeat cum possimus, pariatur
-            laudantium perspiciatis praesentium consequatur omnis suscipit
-            inventore laborum necessitatibus temporibus molestias vero. Facilis
-            ab vero tenetur cupiditate fugiat enim perferendis aperiam pariatur
-            accusamus eius consectetur atque a beatae aut amet praesentium
-            commodi laborum, qui suscipit sunt laboriosam. Illum ut nulla ipsa
-            eum possimus magni voluptate obcaecati facere minima quod suscipit
-            eligendi officiis porro reiciendis perspiciatis quas, eius hic. Id,
-            minus unde reprehenderit aliquid voluptatem magni.
+          <Feather name="calendar" size={18} color={"#000"} />
+
+          <Text
+            style={{
+              // fontSize: 12,
+              color: "#000",
+              fontFamily: "Roboto-Bold",
+              paddingHorizontal: 5,
+            }}
+          >
+            Monday, 01 Nov 2024
           </Text>
-        </ScrollView>
-      </ScrollView>
+          {/* <Entypo name="chevron-small-down" size={36} color={"#000"} /> */}
+        </Pressable>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolore
+          perferendis repudiandae odit vel unde suscipit distinctio
+          reprehenderit cum nemo atque voluptates autem nam veniam voluptas
+          facilis aperiam obcaecati laudantium eius velit, amet incidunt porro
+          alias! Maxime sed dolore, delectus deserunt, perferendis officia
+          voluptatem autem, assumenda asperiores odio est quasi eum deleniti
+          iste labore ea similique vero. Rerum eveniet maxime obcaecati amet
+          enim quidem! Harum totam exercitationem hic quia temporibus distinctio
+          modi minima odit ex, rem a! Animi dicta corporis quaerat quis nemo ab
+          nobis magnam, ratione, labore maiores sed modi assumenda ullam
+          distinctio pariatur unde mollitia culpa deleniti. Sunt.
+        </Text>
+      </View>
     </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: COLORS.accent,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    // borderBottomLeftRadius: 10,
+    // borderBottomRightRadius: 10,
+
+    zIndex: 1,
+  },
+  headerContainerImage: {
+    // borderBottomLeftRadius: 20,
+    // borderBottomRightRadius: 20,
   },
   title: {
     fontSize: 18,
@@ -333,12 +556,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Bold",
     paddingVertical: 10,
   },
-  inputContainer: {
-    position: "relative",
-    marginVertical: 10,
-    position: "absolute",
-    top: 50,
-    zIndex: 500,
+  scrollViewContainer: {
     width: "100%",
   },
 
