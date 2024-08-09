@@ -62,11 +62,45 @@
 //           style={{
 //             flexDirection: "row",
 //             justifyContent: "space-between",
-//             alignItems: "center",
 //           }}
 //         >
 //           <Text style={styles.title}>Kampala</Text>
-//           <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
+//           <View
+//             style={{
+//               flexDirection: "row",
+//               justifyContent: "space-between",
+//               alignItems: "center",
+//             }}
+//           >
+//             <View
+//               style={{
+//                 flexDirection: "column",
+//                 justifyContent: "space-between",
+//                 alignItems: "center",
+//               }}
+//             >
+//               <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
+//               <View
+//                 style={{
+//                   flexDirection: "row",
+//                   justifyContent: "space-between",
+//                   alignItems: "center",
+//                 }}
+//               >
+//                 <Text
+//                   style={{
+//                     fontSize: 12,
+//                     color: "#fff",
+//                     fontFamily: "Roboto-Regular",
+//                     paddingHorizontal: 5,
+//                   }}
+//                 >
+//                   Monday, 01 Nov 2024
+//                 </Text>
+//                 <Entypo name="chevron-small-down" size={24} color={"#fff"} />
+//               </View>
+//             </View>
+//           </View>
 //           <Text style={styles.title}>Lira</Text>
 //         </View>
 //       </View>
@@ -203,12 +237,51 @@ export default function Page() {
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              alignItems: "center",
               marginTop: 20,
             }}
           >
             <Text style={styles.title}>Kampala</Text>
-            <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 30,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <MaterialCommunityIcons
+                  name="bus-side"
+                  size={36}
+                  color="#fff"
+                />
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      color: "#fff",
+                      fontFamily: "Roboto-Regular",
+                      paddingHorizontal: 5,
+                    }}
+                  >
+                    Monday, 01 Nov 2024
+                  </Text>
+                  <Entypo name="chevron-small-down" size={24} color={"#fff"} />
+                </View>
+              </View>
+            </View>
             <Text style={styles.title}>Lira</Text>
           </View>
         </LinearGradient>
@@ -221,14 +294,28 @@ export default function Page() {
       >
         {/* popular destinations scroll bar */}
         <ScrollView
-          horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
             justifyContent: "space-between",
             alignItems: "center",
             flexDirection: "row",
           }}
-        ></ScrollView>
+        >
+          <Text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+            perferendis, nam unde laboriosam ea velit fuga consectetur explicabo
+            ullam excepturi. Tempora magni eum iste eos voluptatum soluta
+            provident nulla velit consectetur placeat cum possimus, pariatur
+            laudantium perspiciatis praesentium consequatur omnis suscipit
+            inventore laborum necessitatibus temporibus molestias vero. Facilis
+            ab vero tenetur cupiditate fugiat enim perferendis aperiam pariatur
+            accusamus eius consectetur atque a beatae aut amet praesentium
+            commodi laborum, qui suscipit sunt laboriosam. Illum ut nulla ipsa
+            eum possimus magni voluptate obcaecati facere minima quod suscipit
+            eligendi officiis porro reiciendis perspiciatis quas, eius hic. Id,
+            minus unde reprehenderit aliquid voluptatem magni.
+          </Text>
+        </ScrollView>
       </ScrollView>
     </SafeAreaProvider>
   );
@@ -253,125 +340,8 @@ const styles = StyleSheet.create({
     top: 50,
     zIndex: 500,
     width: "100%",
-    // paddingVertical: 10,
-  },
-  input: {
-    width: "100%",
-    padding: 10,
-    paddingVertical: Platform.OS === "ios" ? 12 : 8,
-    paddingLeft: 30,
-    borderWidth: 1,
-    borderColor: "#fff",
-    borderRadius: 10,
-    backgroundColor: "#fff",
-    elevation: 3,
-    shadowColor: "#888",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-  },
-  icon: {
-    position: "absolute",
-    left: 10,
-    top: "50%",
-    transform: [{ translateY: -7 }],
-  },
-  upComingTrips: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "#fff",
-    marginHorizontal: 20,
-    borderRadius: 10,
-    elevation: 3,
-    shadowColor: "#888",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-  },
-  upComingTripsTitle: {
-    fontFamily: "Roboto-Medium",
-    color: "#555",
-    marginVertical: 10,
-    fontSize: 18,
-  },
-  upComingTripsSubTitle: {
-    fontFamily: "Roboto-Regular",
-    color: "#888",
-  },
-  upComingTripsText: {
-    fontFamily: "Roboto-Regular",
-    color: "#A6A6A6",
   },
 
-  popularDestinationsImageBackground: {
-    flex: 1,
-    height: 200,
-    justifyContent: "flex-end",
-    width: 140,
-  },
-  popularDestinationsImage: {
-    borderRadius: 10,
-  },
-  popularDestinationsTextContainer: {
-    padding: 10,
-    borderBottomLeftRadius: 10, // Match border radius of image
-    borderBottomRightRadius: 10, // Match border radius of image
-  },
-  popularDestinationsText: {
-    color: "#fff",
-    fontSize: 16,
-    paddingHorizontal: 10,
-  },
-  topPicks: {
-    borderRadius: 10,
-    // width: 250,
-    height: 250,
-    margin: 10,
-    elevation: 2,
-    backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
-  image: {
-    flex: 1,
-    width: "100%",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-  },
-
-  textContainer: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    paddingTop: 5,
-  },
-
-  townName: {
-    fontFamily: "Roboto-Light",
-    color: "#888",
-    marginTop: 10,
-  },
-  fromText: {
-    color: "#888",
-    fontSize: 10,
-    paddingVertical: 5,
-    fontFamily: "Roboto-Light",
-  },
-  amount: {
-    color: "#555",
-    fontFamily: "Poppins-Bold",
-    paddingHorizontal: 5,
-  },
   button: {
     padding: 10,
     paddingVertical: Platform.OS === "ios" ? 15 : 10,

@@ -282,7 +282,8 @@ export default function Page() {
             }}
           >
             <ImageBackground
-              source={{ uri: "https://picsum.photos/id/110/367/267" }}
+              // source={{ uri: "https://picsum.photos/id/110/367/267" }}
+              source={require("../../../assets/images/lira-1.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
