@@ -21,14 +21,15 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function Page() {
   const insets = useSafeAreaInsets();
   const [destination, setDesination] = useState("");
+  const [origin, setOrigin] = useState("");
   const router = useRouter();
 
-  const handleFindBus = () => {
+  const handleFindBus = (origin, destination) => {
     router.push({
       pathname: "/(protected)/bus-list",
       params: {
-        origin: "Kampala",
-        destination: "Lira",
+        origin,
+        destination,
       },
     });
   };
@@ -114,7 +115,7 @@ export default function Page() {
                   paddingHorizontal: 5,
                 }}
               >
-                Kampala
+                Kampalaa
               </Text>
               <Entypo name="chevron-small-down" size={24} color={"#fff"} />
             </View>
@@ -189,7 +190,7 @@ export default function Page() {
         <View style={styles.upComingTrips}>
           <View>
             <Text style={styles.upComingTripsSubTitle}>24th Nov, 9:45 am</Text>
-            <Text style={styles.upComingTripsTitle}>Kampala</Text>
+            <Text style={styles.upComingTripsTitle}>Kampalaa</Text>
             <Text style={styles.upComingTripsText}>YY Bus Terminal</Text>
           </View>
           <View>
@@ -278,7 +279,7 @@ export default function Page() {
               paddingHorizontal: 20,
             }}
             onPress={() => {
-              handleFindBus();
+              handleFindBus("Kampala", "Lira");
             }}
           >
             <ImageBackground
@@ -300,7 +301,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1 }}
             onPress={() => {
-              handleFindBus();
+              handleFindBus("Kampala", "Mbarara");
             }}
           >
             <ImageBackground
@@ -320,7 +321,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1, paddingHorizontal: 20 }}
             onPress={() => {
-              handleFindBus();
+              handleFindBus("Kampala", "Soroti");
             }}
           >
             <ImageBackground
@@ -341,7 +342,7 @@ export default function Page() {
           <Pressable
             style={{ flex: 1 }}
             onPress={() => {
-              handleFindBus();
+              handleFindBus("Kampala", "Kabale");
             }}
           >
             <ImageBackground
@@ -365,7 +366,7 @@ export default function Page() {
               paddingHorizontal: 20,
             }}
             onPress={() => {
-              handleFindBus();
+              handleFindBus("Kampala", "Arua");
             }}
           >
             <ImageBackground
