@@ -24,12 +24,13 @@ export default function Page() {
   const [origin, setOrigin] = useState("");
   const router = useRouter();
 
-  const handleFindBus = (origin, destination) => {
+  const handleFindBus = (origin, destination, photoName) => {
     router.push({
       pathname: "/(protected)/bus-list",
       params: {
         origin,
         destination,
+        photoName,
       },
     });
   };
@@ -284,7 +285,7 @@ export default function Page() {
           >
             <ImageBackground
               // source={{ uri: "https://picsum.photos/id/110/367/267" }}
-              source={require("../../../assets/images/lira-1.jpeg")}
+              source={require("../../../assets/images/lira.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
@@ -305,7 +306,8 @@ export default function Page() {
             }}
           >
             <ImageBackground
-              source={{ uri: "https://picsum.photos/id/25/367/267" }}
+              // source={{ uri: "https://picsum.photos/id/25/367/267" }}
+              source={require("../../../assets/images/mbarara.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
@@ -325,7 +327,8 @@ export default function Page() {
             }}
           >
             <ImageBackground
-              source={{ uri: "https://picsum.photos/id/28/367/267" }}
+              // source={{ uri: "https://picsum.photos/id/28/367/267" }}
+              source={require("../../../assets/images/soroti.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
@@ -346,7 +349,8 @@ export default function Page() {
             }}
           >
             <ImageBackground
-              source={{ uri: "https://picsum.photos/id/29/367/267" }}
+              // source={{ uri: "https://picsum.photos/id/29/367/267" }}
+              source={require("../../../assets/images/kabale.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
@@ -370,7 +374,8 @@ export default function Page() {
             }}
           >
             <ImageBackground
-              source={{ uri: "https://picsum.photos/id/62/367/267" }}
+              // source={{ uri: "https://picsum.photos/id/62/367/267" }}
+              source={require("../../../assets/images/arua.jpeg")}
               style={styles.popularDestinationsImageBackground}
               imageStyle={styles.popularDestinationsImage}
               resizeMode="cover"
