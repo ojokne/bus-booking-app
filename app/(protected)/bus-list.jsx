@@ -22,11 +22,13 @@ export default function Page() {
   const router = useRouter();
   const { origin, destination } = useLocalSearchParams();
 
+  const image = require(`../../assets/images/jinja-bridge.jpg`);
+
   const a = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <SafeAreaProvider>
       <ImageBackground
-        source={require("../../assets/images/lira-1.jpeg")}
+        source={require(`../../assets/images/jinja-bridge.jpg`)}
         resizeMode="cover"
       >
         <LinearGradient
