@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {
-  ScrollView,
   StyleSheet,
   Text,
   View,
-  Platform,
   Pressable,
   ImageBackground,
   FlatList,
@@ -27,68 +25,74 @@ export default function Page() {
   const a = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <SafeAreaProvider>
-      <LinearGradient
-        colors={[COLORS.accent, COLORS.primary]} // Gradient from transparent to semi-transparent black
-        style={{
-          paddingTop: insets.top + 20,
-          paddingBottom: insets.bottom + 30,
-        }}
+      <ImageBackground
+        source={require("../../assets/images/lira-1.jpeg")}
+        resizeMode="cover"
       >
-        <Pressable
-          onPress={() => {
-            router.back();
-          }}
-          style={{ paddingHorizontal: 20 }}
-        >
-          <Feather name="arrow-left" size={24} color="#fff" />
-        </Pressable>
-        <View
+        <LinearGradient
+          colors={["rgba(0, 0, 0, 0.6)", "rgba(0, 0, 0, 0.6)"]} // Gradient from transparent to semi-transparent black
           style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingHorizontal: 20,
-            paddingVertical: 10,
+            paddingTop: insets.top + 20,
+            paddingBottom: insets.bottom + 30,
           }}
         >
-          <Text style={styles.title}>{origin}</Text>
-          <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
-
-          <Text style={styles.title}>{destination}</Text>
-        </View>
-        <View style={styles.scrollViewContainer}>
-          <FlatList
-            data={a}
-            renderItem={({ item }) => <BusItem />}
+          <Pressable
+            onPress={() => {
+              router.back();
+            }}
+            style={{ paddingHorizontal: 20 }}
+          >
+            <Feather name="arrow-left" size={24} color="#fff" />
+          </Pressable>
+          <View
             style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
               paddingHorizontal: 20,
+              paddingVertical: 10,
             }}
-            contentContainerStyle={{
-              paddingBottom: 170,
-            }}
-            ListHeaderComponent={
-              <Pressable style={styles.dateContainer}>
-                <Feather name="calendar" size={18} color={COLORS.primary} />
+          >
+            <Text style={styles.title}>{origin}</Text>
+            <MaterialCommunityIcons name="bus-side" size={36} color="#fff" />
 
-                <Text
-                  style={{
-                    color: COLORS.primary,
-                    fontFamily: "Roboto-Bold",
-                    paddingLeft: 5,
-                  }}
-                >
-                  Monday, 01 Nov 2024
-                </Text>
-                <Entypo
-                  name="chevron-small-down"
-                  size={28}
-                  color={COLORS.primary}
-                />
-              </Pressable>
-            }
-          />
-        </View>
-      </LinearGradient>
+            <Text style={styles.title}>{destination}</Text>
+          </View>
+        </LinearGradient>
+      </ImageBackground>
+
+      <View style={styles.scrollViewContainer}>
+        <FlatList
+          data={a}
+          renderItem={({ item }) => <BusItem />}
+          style={{
+            paddingHorizontal: 20,
+          }}
+          contentContainerStyle={{
+            paddingBottom: 170,
+          }}
+          ListHeaderComponent={
+            <Pressable style={styles.dateContainer}>
+              <Feather name="calendar" size={18} color={COLORS.primary} />
+
+              <Text
+                style={{
+                  color: COLORS.primary,
+                  fontFamily: "Roboto-Bold",
+                  paddingLeft: 5,
+                }}
+              >
+                Monday, 01 Nov 2024
+              </Text>
+              <Entypo
+                name="chevron-small-down"
+                size={28}
+                color={COLORS.primary}
+              />
+            </Pressable>
+          }
+        />
+      </View>
     </SafeAreaProvider>
   );
 }
@@ -106,6 +110,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     height: "100%",
     width: "100%",
+    position: "absolute",
+    top: 150,
   },
   dateContainer: {
     flexDirection: "row",
