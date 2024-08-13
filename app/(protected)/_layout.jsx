@@ -21,6 +21,13 @@ export default function Layout() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="bus-details"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
