@@ -1,13 +1,18 @@
 import { Entypo } from "@expo/vector-icons";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import { Pressable, Text, View, StyleSheet } from "react-native";
 
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 export default BusItem = () => {
+  const router = useRouter();
   return (
-    <Pressable style={styles.busContainer}>
+    <Pressable
+      style={styles.busContainer}
+      onPress={() => router.push("/(protected)/bus-details")}
+    >
       <View
         style={{
           flexDirection: "row",
