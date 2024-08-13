@@ -116,7 +116,7 @@ export default function Page() {
                   paddingHorizontal: 5,
                 }}
               >
-                Kampalaa
+                Kampala
               </Text>
               <Entypo name="chevron-small-down" size={24} color={"#fff"} />
             </View>
@@ -191,7 +191,7 @@ export default function Page() {
         <View style={styles.upComingTrips}>
           <View>
             <Text style={styles.upComingTripsSubTitle}>24th Nov, 9:45 am</Text>
-            <Text style={styles.upComingTripsTitle}>Kampalaa</Text>
+            <Text style={styles.upComingTripsTitle}>Kampala</Text>
             <Text style={styles.upComingTripsText}>YY Bus Terminal</Text>
           </View>
           <View>
