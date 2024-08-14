@@ -14,8 +14,10 @@ import {
 } from "react-native-safe-area-context";
 import { COLORS } from "../../constants/colors";
 import {
+  AntDesign,
   Entypo,
   Feather,
+  FontAwesome,
   Fontisto,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
@@ -69,21 +71,92 @@ export default function Page() {
             justifyContent: "space-between",
           }}
         >
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              paddingHorizontal: 20,
-              paddingVertical: 20,
-            }}
-          >
-            <View>
-              <Text style={styles.title}>YY Coaches</Text>
+          <View>
+            {/* name and amount */}
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                paddingHorizontal: 20,
+                paddingVertical: 20,
+              }}
+            >
+              <View>
+                <Text style={styles.title}>YY Coaches</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginTop: -5,
+                  }}
+                >
+                  <Fontisto
+                    name="map-marker-alt"
+                    size={12}
+                    color={COLORS.primary}
+                  />
+                  <Text
+                    style={{
+                      fontFamily: "Roboto-Regular",
+                      paddingHorizontal: 5,
+                      color: "#888",
+                    }}
+                  >
+                    Kampala - Lira
+                  </Text>
+                </View>
+              </View>
+              <Text style={styles.title}>UGX 30,000</Text>
+            </View>
+
+            {/* rating time and duration */}
+            <View
+              style={{
+                paddingHorizontal: 20,
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
               <View
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
-                  marginTop: -5,
+                }}
+              >
+                <Feather name="star" size={16} color={COLORS.primary} />
+                <Text
+                  style={{
+                    fontFamily: "Poppins-Bold",
+                    color: "#555",
+                    paddingLeft: 5,
+                    top: 3,
+                  }}
+                >
+                  4.5
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <Feather name="clock" size={16} color={COLORS.primary} />
+                <Text
+                  style={{
+                    fontFamily: "Poppins-Bold",
+                    color: "#555",
+                    paddingLeft: 5,
+                    top: 3,
+                  }}
+                >
+                  22:00
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
                 }}
               >
                 <Fontisto
@@ -93,26 +166,154 @@ export default function Page() {
                 />
                 <Text
                   style={{
-                    fontFamily: "Roboto-Regular",
-                    paddingHorizontal: 5,
-                    color: "#888",
+                    fontFamily: "Poppins-Bold",
+                    color: "#555",
+                    paddingLeft: 5,
+                    top: 3,
                   }}
                 >
-                  Kampala - Lira
+                  7 hrs
                 </Text>
               </View>
             </View>
-            <Text style={styles.title}>UGX 30,000</Text>
+
+            {/* amenities */}
+            <View
+              style={{
+                paddingVertical: 20,
+                paddingHorizontal: 20,
+              }}
+            >
+              <Text style={styles.subTitle}>Amenities</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <AntDesign name="wifi" size={24} color={COLORS.primary} />
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: 3,
+                      }}
+                    >
+                      Wifi
+                    </Text>
+                  </View>
+
+                  <View></View>
+                </View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FontAwesome name="tv" size={24} color={COLORS.primary} />
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: 3,
+                      }}
+                    >
+                      Central TV
+                    </Text>
+                  </View>
+
+                  <View></View>
+                </View>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <MaterialCommunityIcons
+                      name="power-socket-uk"
+                      size={24}
+                      color={COLORS.primary}
+                    />
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: 3,
+                      }}
+                    >
+                      Socket
+                    </Text>
+                  </View>
+                </View>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <MaterialCommunityIcons
+                      name="popcorn"
+                      size={24}
+                      color={COLORS.primary}
+                    />
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: 3,
+                      }}
+                    >
+                      Snacks
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
           </View>
-        </View>
-        <View
-          style={{
-            paddingBottom: 220,
-          }}
-        >
-          <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Book Seats</Text>
-          </Pressable>
+
+          <View
+            style={{
+              paddingBottom: 220,
+            }}
+          >
+            <Pressable style={styles.button}>
+              <Text style={styles.buttonText}>Book Seats</Text>
+            </Pressable>
+          </View>
         </View>
       </View>
     </SafeAreaProvider>
@@ -124,6 +325,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "Poppins-Bold",
     color: "#555",
+  },
+  subTitle: {
+    fontSize: 16,
+    fontFamily: "Roboto-Bold",
+    color: "#555",
+    paddingVertical: 15,
   },
   curvedContainer: {
     backgroundColor: "#f5f5f5",
