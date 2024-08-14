@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontFamily: "Poppins-Bold",
+    color: "#555",
   },
   curvedContainer: {
     backgroundColor: "#f5f5f5",

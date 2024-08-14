@@ -36,6 +36,7 @@ export default BusItem = () => {
             <Text
               style={{
                 fontFamily: "Roboto-Bold",
+                color: "#555",
               }}
             >
               YY Coaches
@@ -43,6 +44,7 @@ export default BusItem = () => {
             <Text
               style={{
                 fontFamily: "Roboto-Bold",
+                color: "#555",
               }}
             >
               UGX 30,000
@@ -73,6 +75,7 @@ export default BusItem = () => {
             <Text
               style={{
                 fontFamily: "Roboto-Bold",
+                color: "#555",
               }}
             >
               08:30
@@ -92,6 +95,7 @@ export default BusItem = () => {
             <Text
               style={{
                 fontFamily: "Roboto-Bold",
+                color: "#555",
               }}
             >
               16:00
