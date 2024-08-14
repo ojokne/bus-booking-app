@@ -6,6 +6,7 @@ import {
   Pressable,
   ImageBackground,
   FlatList,
+  Platform,
 } from "react-native";
 import {
   SafeAreaProvider,
@@ -64,58 +65,55 @@ export default function Page() {
       <View style={styles.curvedContainer}>
         <View
           style={{
-            flexDirection: "row",
+            flex: 1,
             justifyContent: "space-between",
-            paddingHorizontal: 20,
-            paddingVertical: 20,
           }}
         >
-          <View>
-            <Text style={styles.title}>YY Coaches</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                marginTop: -5,
-              }}
-            >
-              <Fontisto
-                name="map-marker-alt"
-                size={12}
-                color={COLORS.primary}
-              />
-              <Text
-                style={{
-                  fontSize: 10,
-                  fontFamily: "Roboto-Regular",
-                  paddingHorizontal: 5,
-                  color: "#888",
-                }}
-              >
-                Kampala - Lira
-              </Text>
-            </View>
-          </View>
-          <Text style={styles.title}>UGX 30,000</Text>
-        </View>
-        {/* <View
-          style={{
-            flexDirection: "row",
-            //   justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Fontisto name="map-marker-alt" size={12} color={COLORS.primary} />
-          <Text
+          <View
             style={{
-              fontSize: 12,
-              fontFamily: "Poppins-Bold",
-              paddingHorizontal: 5,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingHorizontal: 20,
+              paddingVertical: 20,
             }}
           >
-            Kampalaa
-          </Text>
-        </View> */}
+            <View>
+              <Text style={styles.title}>YY Coaches</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginTop: -5,
+                }}
+              >
+                <Fontisto
+                  name="map-marker-alt"
+                  size={12}
+                  color={COLORS.primary}
+                />
+                <Text
+                  style={{
+                    fontFamily: "Roboto-Regular",
+                    paddingHorizontal: 5,
+                    color: "#888",
+                  }}
+                >
+                  Kampala - Lira
+                </Text>
+              </View>
+            </View>
+            <Text style={styles.title}>UGX 30,000</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            paddingBottom: 220,
+          }}
+        >
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Book Seats</Text>
+          </Pressable>
+        </View>
       </View>
     </SafeAreaProvider>
   );
@@ -141,5 +139,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  button: {
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
+    borderRadius: 10,
+    marginHorizontal: 20,
+  },
+  buttonText: {
+    color: "#fff",
+    fontFamily: "Poppins-Bold",
+    textAlign: "center",
+    fontSize: 16,
   },
 });
