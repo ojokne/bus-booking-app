@@ -177,6 +177,49 @@ export default function Page() {
               </View>
             </View>
 
+            {/* stops */}
+            <View
+              style={{
+                paddingVertical: 20,
+                paddingHorizontal: 20,
+              }}
+            >
+              <Text style={styles.subTitle}>Stops</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {/* <AntDesign name="wifi" size={24} color={COLORS.primary} /> */}
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: 3,
+                      }}
+                    >
+                      Karuma Bridge
+                    </Text>
+                  </View>
+
+                  <View></View>
+                </View>
+              </View>
+            </View>
+
             {/* amenities */}
             <View
               style={{
@@ -303,6 +346,8 @@ export default function Page() {
                 </View>
               </View>
             </View>
+
+            {/* reviews */}
           </View>
 
           <View
