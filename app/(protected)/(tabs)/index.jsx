@@ -64,9 +64,7 @@ export default function Page() {
       </View> */}
 
       <ImageBackground
-        source={{
-          uri: "https://roadfund.ug/wp-content/uploads/2019/12/The-Nile-Bridge-Jinja-4-optimized-1.jpg",
-        }}
+        source={require(`../../../assets/images/jinja-bridge.jpg`)}
         style={[
           {
             borderBottomLeftRadius: 10,
