@@ -56,14 +56,30 @@ export default function Page() {
             height: 300,
           }}
         >
-          <Pressable
-            onPress={() => {
-              router.back();
+          <View
+            style={{
+              flexDirection: "row",
             }}
-            style={{ paddingHorizontal: 20 }}
           >
-            <Feather name="arrow-left" size={24} color="#fff" />
-          </Pressable>
+            <Pressable
+              onPress={() => {
+                router.back();
+              }}
+              style={{ paddingHorizontal: 20 }}
+            >
+              <Feather name="arrow-left" size={24} color="#fff" />
+            </Pressable>
+
+            <Text
+              style={{
+                fontSize: 18,
+                fontFamily: "Poppins-Bold",
+                color: "#fff",
+              }}
+            >
+              Bus Details
+            </Text>
+          </View>
         </LinearGradient>
       </ImageBackground>
 
