@@ -39,7 +39,6 @@ export default function Page() {
     <SafeAreaProvider>
       <ImageBackground
         source={require(`../../assets/images/jinja-bridge.jpg`)}
-        resizeMode="center"
         style={{
           width: "100%",
           height: 300,
