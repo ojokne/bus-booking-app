@@ -28,6 +28,13 @@ export default function Layout() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="bus-seats"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }

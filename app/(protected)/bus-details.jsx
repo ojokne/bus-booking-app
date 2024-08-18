@@ -49,7 +49,7 @@ export default function Page() {
         }}
       >
         <LinearGradient
-          colors={["rgba(0, 0, 0, 0.3)", "transparent"]} // Gradient from transparent to semi-transparent black
+          colors={["rgba(0, 0, 0, 0.6)", "transparent"]} // Gradient from transparent to semi-transparent black
           style={{
             paddingTop: insets.top + 20,
             paddingBottom: insets.bottom + 30,
@@ -408,7 +408,10 @@ export default function Page() {
               paddingBottom: 220,
             }}
           >
-            <Pressable style={styles.button}>
+            <Pressable
+              style={styles.button}
+              onPress={() => router.push("/(protected)/bus-seats")}
+            >
               <Text style={styles.buttonText}>Book Seats</Text>
             </Pressable>
           </View>
