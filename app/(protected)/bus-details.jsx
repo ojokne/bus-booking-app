@@ -21,16 +21,20 @@ import {
   Fontisto,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
-import BusItem from "../../components/BusItem";
+import * as Linking from "expo-linking";
 
 export default function Page() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { origin, destination } = useLocalSearchParams();
 
-  const a = [1, 2, 3, 4, 5, 6, 7, 8];
+  const handlePhoneCall = () => {
+    // Replace with the phone number you want to dial
+    const phoneNumber = "tel:+1234567890";
+    Linking.openURL(phoneNumber);
+  };
+
   return (
     <SafeAreaProvider>
       <ImageBackground
@@ -180,7 +184,7 @@ export default function Page() {
             {/* stops */}
             <View
               style={{
-                paddingVertical: 20,
+                paddingTop: 10,
                 paddingHorizontal: 20,
               }}
             >
@@ -203,12 +207,11 @@ export default function Page() {
                       justifyContent: "center",
                     }}
                   >
-                    {/* <AntDesign name="wifi" size={24} color={COLORS.primary} /> */}
                     <Text
                       style={{
                         fontFamily: "Poppins-Regular",
                         color: "#888",
-                        top: 3,
+                        top: -10,
                       }}
                     >
                       Karuma Bridge
@@ -223,7 +226,6 @@ export default function Page() {
             {/* amenities */}
             <View
               style={{
-                paddingVertical: 20,
                 paddingHorizontal: 20,
               }}
             >
@@ -246,7 +248,7 @@ export default function Page() {
                       justifyContent: "center",
                     }}
                   >
-                    <AntDesign name="wifi" size={24} color={COLORS.primary} />
+                    <AntDesign name="wifi" size={24} color={"#888"} />
                     <Text
                       style={{
                         fontFamily: "Poppins-Regular",
@@ -272,7 +274,7 @@ export default function Page() {
                       justifyContent: "center",
                     }}
                   >
-                    <FontAwesome name="tv" size={24} color={COLORS.primary} />
+                    <FontAwesome name="tv" size={24} color={"#888"} />
                     <Text
                       style={{
                         fontFamily: "Poppins-Regular",
@@ -302,7 +304,7 @@ export default function Page() {
                     <MaterialCommunityIcons
                       name="power-socket-uk"
                       size={24}
-                      color={COLORS.primary}
+                      color={"#888"}
                     />
                     <Text
                       style={{
@@ -331,7 +333,7 @@ export default function Page() {
                     <MaterialCommunityIcons
                       name="popcorn"
                       size={24}
-                      color={COLORS.primary}
+                      color={"#888"}
                     />
                     <Text
                       style={{
@@ -347,7 +349,59 @@ export default function Page() {
               </View>
             </View>
 
-            {/* reviews */}
+            {/* contact */}
+            <View
+              style={{
+                paddingHorizontal: 20,
+                backgroundColor: "#cbdbe2",
+                marginHorizontal: 20,
+                marginTop: 40,
+                borderRadius: 10,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  padding: 10,
+                  alignItems: "center",
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: "#fff",
+                      padding: 10,
+                      borderRadius: 50,
+                      marginRight: 10,
+                    }}
+                  >
+                    <AntDesign name="user" size={48} color={"#cbdbe2"} />
+                  </View>
+                  <View>
+                    <Text style={styles.subTitle}>Tommy Jaison</Text>
+
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Regular",
+                        color: "#888",
+                        top: -10,
+                      }}
+                    >
+                      Sales
+                    </Text>
+                  </View>
+                </View>
+                <Pressable onPress={handlePhoneCall}>
+                  <AntDesign name="phone" size={24} color={"#3CB371"} />
+                </Pressable>
+              </View>
+            </View>
           </View>
 
           <View
