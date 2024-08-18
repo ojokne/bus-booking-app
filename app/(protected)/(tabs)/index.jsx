@@ -407,10 +407,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginVertical: 10,
     position: "absolute",
-    top: 50,
+    top: "100%",
     zIndex: 500,
     width: "100%",
-    // paddingVertical: 10,
   },
   input: {
     width: "100%",
